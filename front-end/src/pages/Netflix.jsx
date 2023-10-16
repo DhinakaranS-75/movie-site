@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/home.jpg";
+import backgroundImage from "../assets/wallpaper.jpg";
 import MovieLogo from "../assets/homeTitle.webp";
 
 import { onAuthStateChanged } from "firebase/auth";
