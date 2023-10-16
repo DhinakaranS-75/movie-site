@@ -62,8 +62,8 @@ export default function Navbar({ isScrolled }) {
               }}
             />
           </div>
-          <button onClick={() => signOut(firebaseAuth)}>
-            <FaPowerOff />
+          <button className="log_out" onClick={() => signOut(firebaseAuth)}>
+            Log out
           </button>
         </div>
       </nav>
@@ -159,6 +159,15 @@ const Container = styled.div`
           visibility: visible;
           padding: 0.3rem;
         }
+      }
+      .log_out{
+        background-color:red;
+        width:75px;
+        border: solid 2px black;
+        padding: 10px;
+        font-size:12.5px;
+        border-radius:10px;
+        color:#fff;
       }
     }
   }
