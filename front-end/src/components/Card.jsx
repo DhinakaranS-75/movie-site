@@ -32,7 +32,7 @@ export default function Card({ movieData, isLiked = false }) {
             <video
               src={video}
               autoPlay
-              loop
+              loop muted
               onClick={() => navigate("/player")}
             />
           </div>
