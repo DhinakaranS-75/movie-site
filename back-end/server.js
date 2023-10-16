@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-
+const userRoutes = require("./routes/UserRoutes");
 const mongoose = require("mongoose");
 
 const app = express();
@@ -9,10 +9,13 @@ app.use(cors());
 app.use(express.json());
 
 mongoose
-  .connect("mongodb+srv://dhinakaran75493:dhina123@cluster0.zfg0tml.mongodb.net/?retryWrites=true&w=majority", {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-  })
+  .connect(
+    "mongodb+srv://dhinakaran75493:dhina123@cluster0.zfg0tml.mongodb.net/?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
   .then(() => {
     console.log("DB Connetion Successfull");
   })
@@ -21,7 +24,8 @@ mongoose
   });
 
 
+  app.use("/api/user", userRoutes);
 
-app.listen(4000, () => {
-  console.log("server started on port 5000");
-});
+  app.listen(5000, () => {
+    console.log("server started on port 5000");
+  });

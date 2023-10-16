@@ -7,10 +7,9 @@ import { firebaseAuth } from "../utils/firebase-config";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchMovies, getGenres } from "../store";
-
+import SelectGenre from "../components/SelectGenre";
 import Slider from "../components/Slider";
 import NotAvailable from "../components/NotAvailable";
-import SelectGenre from "../components/SelectGenre";
 
 function MoviePage() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -48,7 +47,6 @@ function MoviePage() {
       <div className="navbar">
         <Navbar isScrolled={isScrolled} />
       </div>
-
       <div className="data">
         <SelectGenre genres={genres} type="movie" />
         {movies.length ? <Slider movies={movies} /> : <NotAvailable />}

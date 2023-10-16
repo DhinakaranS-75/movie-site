@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import Navbar from "../components/Navbar";
-import backgroundImage from "../assets/wallpaper.jpg";
+import backgroundImage from "../assets/home.jpg";
 import MovieLogo from "../assets/homeTitle.webp";
 
 import { onAuthStateChanged } from "firebase/auth";
@@ -12,8 +12,7 @@ import { fetchMovies, getGenres } from "../store";
 import { FaPlay } from "react-icons/fa";
 import { AiOutlineInfoCircle } from "react-icons/ai";
 import Slider from "../components/Slider";
-
-function Netflix({ movieData }) {
+function Netflix() {
   const [isScrolled, setIsScrolled] = useState(false);
   const movies = useSelector((state) => state.netflix.movies);
   const genres = useSelector((state) => state.netflix.genres);
@@ -50,13 +49,6 @@ function Netflix({ movieData }) {
           alt="background"
           className="background-image"
         />
-
-        {/* <img
-          src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
-          alt="movie"
-          className="background-image"
-        /> */}
-
         <div className="container">
           <div className="logo">
             <img src={MovieLogo} alt="Movie Logo" />
